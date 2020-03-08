@@ -1,0 +1,296 @@
+# Nmap 7.80 scan initiated Sun Mar  8 20:48:34 2020 as: nmap -sC -sV -p- -A -oA Meta3 192.168.1.40
+Nmap scan report for 192.168.1.40
+Host is up (0.00021s latency).
+Not shown: 65485 closed ports
+PORT      STATE SERVICE              VERSION
+21/tcp    open  ftp                  Microsoft ftpd
+| ftp-syst: 
+|_  SYST: Windows_NT
+22/tcp    open  ssh                  OpenSSH 7.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 51:63:76:fa:c7:65:88:3d:8a:94:05:79:dd:02:d4:a8 (RSA)
+|_  521 ea:aa:3a:c8:83:e0:87:30:ae:2f:c0:36:40:3b:4d:43 (ECDSA)
+80/tcp    open  http                 Microsoft IIS httpd 7.5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/7.5
+|_http-title: Site doesn't have a title (text/html).
+135/tcp   open  msrpc                Microsoft Windows RPC
+139/tcp   open  netbios-ssn          Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds         Windows Server 2008 R2 Standard 7601 Service Pack 1 microsoft-ds
+1617/tcp  open  java-rmi             Java RMI
+| rmi-dumpregistry: 
+|   jmxrmi
+|     javax.management.remote.rmi.RMIServerImpl_Stub
+|     @192.168.1.40:49225
+|     extends
+|       java.rmi.server.RemoteStub
+|       extends
+|_        java.rmi.server.RemoteObject
+3306/tcp  open  mysql                MySQL 5.5.20-log
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.20-log
+|   Thread ID: 8
+|   Capabilities flags: 63487
+|   Some Capabilities: SupportsTransactions, SupportsCompression, InteractiveClient, FoundRows, Support41Auth, IgnoreSigpipes, Speaks41ProtocolOld, LongPassword, ConnectWithDatabase, Speaks41ProtocolNew, IgnoreSpaceBeforeParenthesis, ODBCClient, SupportsLoadDataLocal, LongColumnFlag, DontAllowDatabaseTableColumn, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: B+P4OqlJniFb:9Ob"|n2
+|_  Auth Plugin Name: mysql_native_password
+3389/tcp  open  ssl/ms-wbt-server?
+| rdp-ntlm-info: 
+|   Target_Name: VAGRANT-2008R2
+|   NetBIOS_Domain_Name: VAGRANT-2008R2
+|   NetBIOS_Computer_Name: VAGRANT-2008R2
+|   DNS_Domain_Name: vagrant-2008R2
+|   DNS_Computer_Name: vagrant-2008R2
+|   Product_Version: 6.1.7601
+|_  System_Time: 2020-03-08T15:22:55+00:00
+| ssl-cert: Subject: commonName=vagrant-2008R2
+| Not valid before: 2020-02-29T10:16:54
+|_Not valid after:  2020-08-30T10:16:54
+|_ssl-date: 2020-03-08T15:23:40+00:00; 0s from scanner time.
+3700/tcp  open  giop                 CORBA naming service
+3820/tcp  open  ssl/giop             CORBA naming service
+| ssl-cert: Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US
+| Not valid before: 2013-05-15T05:33:38
+|_Not valid after:  2023-05-13T05:33:38
+|_ssl-date: 2020-03-08T15:23:40+00:00; 0s from scanner time.
+3920/tcp  open  ssl/exasoftport1?
+|_ssl-date: 2020-03-08T15:23:40+00:00; 0s from scanner time.
+4848/tcp  open  ssl/http             Oracle Glassfish Application Server
+|_http-server-header: GlassFish Server Open Source Edition  4.0 
+|_http-title: Did not follow redirect to https://192.168.1.40:4848/
+| ssl-cert: Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US
+| Not valid before: 2013-05-15T05:33:38
+|_Not valid after:  2023-05-13T05:33:38
+|_ssl-date: 2020-03-08T15:23:40+00:00; 0s from scanner time.
+5985/tcp  open  http                 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+7676/tcp  open  java-message-service Java Message Service 301
+8009/tcp  open  ajp13                Apache Jserv (Protocol v1.3)
+|_ajp-methods: Failed to get a valid response for the OPTION request
+8019/tcp  open  qbdb?
+8020/tcp  open  http                 Apache httpd
+| http-methods: 
+|_  Potentially risky methods: PUT DELETE
+|_http-server-header: Apache
+|_http-title: Site doesn't have a title (text/html;charset=UTF-8).
+8022/tcp  open  http                 Apache Tomcat/Coyote JSP engine 1.1
+| http-methods: 
+|_  Potentially risky methods: PUT DELETE
+|_http-server-header: Apache-Coyote/1.1
+|_http-title: Site doesn't have a title (text/html;charset=UTF-8).
+8027/tcp  open  unknown
+8028/tcp  open  unknown
+8031/tcp  open  ssl/unknown
+8032/tcp  open  desktop-central      ManageEngine Desktop Central DesktopCentralServer
+8080/tcp  open  http                 Sun GlassFish Open Source Edition  4.0
+| http-methods: 
+|_  Potentially risky methods: PUT DELETE TRACE
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-server-header: GlassFish Server Open Source Edition  4.0 
+|_http-title: GlassFish Server - Server Running
+8181/tcp  open  ssl/intermapper?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Sun, 08 Mar 2020 15:20:00 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     Content-Length: 4626
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+|     <html lang="en">
+|     <!--
+|     ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+|     Copyright (c) 2010, 2013 Oracle and/or its affiliates. All rights reserved.
+|     subject to License Terms
+|     <head>
+|     <style type="text/css">
+|     body{margin-top:0}
+|     body,td,p,div,span,a,ul,ul li, ol, ol li, ol li b, dl,h1,h2,h3,h4,h5,h6,li {font-family:geneva,helvetica,arial,"lucida sans",sans-serif; font-size:10pt}
+|     {font-size:18pt}
+|     {font-size:14pt}
+|     {font-size:12pt}
+|     code,kbd,tt,pre {font-family:monaco,courier,"courier new"; font-size:10pt;}
+|     {padding-bottom: 8px}
+|     p.copy, p.copy a {font-family:geneva,helvetica,arial,"lucida sans",sans-serif; font-size:8pt}
+|     p.copy {text-align: center}
+|     table.grey1,tr.grey1,td.g
+|   HTTPOptions: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Allow: GET
+|     Date: Sun, 08 Mar 2020 15:20:00 GMT
+|     Connection: close
+|     Content-Length: 0
+|   RTSPRequest: 
+|     HTTP/1.1 505 HTTP Version Not Supported
+|     Date: Sun, 08 Mar 2020 15:20:00 GMT
+|     Connection: close
+|_    Content-Length: 0
+| ssl-cert: Subject: commonName=localhost/organizationName=Oracle Corporation/stateOrProvinceName=California/countryName=US
+| Not valid before: 2013-05-15T05:33:38
+|_Not valid after:  2023-05-13T05:33:38
+|_ssl-date: 2020-03-08T15:23:40+00:00; 0s from scanner time.
+8282/tcp  open  http                 Apache Tomcat/Coyote JSP engine 1.1
+|_http-favicon: Apache Tomcat
+|_http-server-header: Apache-Coyote/1.1
+|_http-title: Apache Tomcat/8.0.33
+8383/tcp  open  ssl/http             Apache httpd
+| http-methods: 
+|_  Potentially risky methods: PUT DELETE
+|_http-server-header: Apache
+|_http-title: Site doesn't have a title (text/html;charset=UTF-8).
+| ssl-cert: Subject: commonName=Desktop Central/organizationName=Zoho Corporation/stateOrProvinceName=CA/countryName=US
+| Not valid before: 2010-09-08T12:24:44
+|_Not valid after:  2020-09-05T12:24:44
+|_ssl-date: TLS randomness does not represent time
+8443/tcp  open  ssl/https-alt?
+8444/tcp  open  desktop-central      ManageEngine Desktop Central DesktopCentralServer
+8484/tcp  open  http                 Jetty winstone-2.8
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Jetty(winstone-2.8)
+|_http-title: Dashboard [Jenkins]
+8585/tcp  open  http                 Apache httpd 2.2.21 ((Win64) PHP/5.3.10 DAV/2)
+|_http-server-header: Apache/2.2.21 (Win64) PHP/5.3.10 DAV/2
+|_http-title: WAMPSERVER Homepage
+8686/tcp  open  java-rmi             Java RMI
+| rmi-dumpregistry: 
+|   vagrant-2008R2/7676/jmxrmi
+|     javax.management.remote.rmi.RMIServerImpl_Stub
+|     @192.168.1.40:49347
+|     extends
+|       java.rmi.server.RemoteStub
+|       extends
+|         java.rmi.server.RemoteObject
+|   jmxrmi
+|     javax.management.remote.rmi.RMIServerImpl_Stub
+|     @192.168.1.40:8686
+|     extends
+|       java.rmi.server.RemoteStub
+|       extends
+|_        java.rmi.server.RemoteObject
+9200/tcp  open  wap-wsp?
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Type: text/plain; charset=UTF-8
+|     Content-Length: 80
+|     handler found for uri [/nice%20ports%2C/Tri%6Eity.txt%2ebak] and method [GET]
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: application/json; charset=UTF-8
+|     Content-Length: 315
+|     "status" : 200,
+|     "name" : "Mother Superior",
+|     "version" : {
+|     "number" : "1.1.1",
+|     "build_hash" : "f1585f096d3f3985e73456debdc1a0745f512bbc",
+|     "build_timestamp" : "2014-04-16T14:27:12Z",
+|     "build_snapshot" : false,
+|     "lucene_version" : "4.7"
+|     "tagline" : "You Know, for Search"
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/plain; charset=UTF-8
+|     Content-Length: 0
+|   RTSPRequest, SIPOptions: 
+|     HTTP/1.1 200 OK
+|     Content-Type: text/plain; charset=UTF-8
+|_    Content-Length: 0
+9300/tcp  open  vrace?
+47001/tcp open  http                 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49152/tcp open  msrpc                Microsoft Windows RPC
+49153/tcp open  msrpc                Microsoft Windows RPC
+49154/tcp open  msrpc                Microsoft Windows RPC
+49155/tcp open  msrpc                Microsoft Windows RPC
+49158/tcp open  unknown
+49183/tcp open  msrpc                Microsoft Windows RPC
+49186/tcp open  msrpc                Microsoft Windows RPC
+49225/tcp open  java-rmi             Java RMI
+49228/tcp open  tcpwrapped
+49310/tcp open  ssh                  Apache Mina sshd 0.8.0 (protocol 2.0)
+| ssh-hostkey: 
+|_  2048 07:73:71:8c:de:8e:f0:51:af:77:1b:ae:93:63:c0:05 (RSA)
+49311/tcp open  jenkins-listener     Jenkins TcpSlaveAgentListener
+49347/tcp open  java-rmi             Java RMI
+49350/tcp open  unknown
+49351/tcp open  unknown
+49352/tcp open  unknown
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8181-TCP:V=7.80%T=SSL%I=7%D=3/8%Time=5E650D20%P=x86_64-unknown-linu
+SF:x-gnu%r(GetRequest,128C,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2008\
+SF:x20Mar\x202020\x2015:20:00\x20GMT\r\nContent-Type:\x20text/html\r\nConn
+SF:ection:\x20close\r\nContent-Length:\x204626\r\n\r\n<!DOCTYPE\x20HTML\x2
+SF:0PUBLIC\x20\"-//W3C//DTD\x20HTML\x204\.01\x20Transitional//EN\">\n<html
+SF:\x20lang=\"en\">\n<!--\nDO\x20NOT\x20ALTER\x20OR\x20REMOVE\x20COPYRIGHT
+SF:\x20NOTICES\x20OR\x20THIS\x20HEADER\.\n\nCopyright\x20\(c\)\x202010,\x2
+SF:02013\x20Oracle\x20and/or\x20its\x20affiliates\.\x20All\x20rights\x20re
+SF:served\.\n\nUse\x20is\x20subject\x20to\x20License\x20Terms\n-->\n<head>
+SF:\n<style\x20type=\"text/css\">\n\tbody{margin-top:0}\n\tbody,td,p,div,s
+SF:pan,a,ul,ul\x20li,\x20ol,\x20ol\x20li,\x20ol\x20li\x20b,\x20dl,h1,h2,h3
+SF:,h4,h5,h6,li\x20{font-family:geneva,helvetica,arial,\"lucida\x20sans\",
+SF:sans-serif;\x20font-size:10pt}\n\th1\x20{font-size:18pt}\n\th2\x20{font
+SF:-size:14pt}\n\th3\x20{font-size:12pt}\n\tcode,kbd,tt,pre\x20{font-famil
+SF:y:monaco,courier,\"courier\x20new\";\x20font-size:10pt;}\n\tli\x20{padd
+SF:ing-bottom:\x208px}\n\tp\.copy,\x20p\.copy\x20a\x20{font-family:geneva,
+SF:helvetica,arial,\"lucida\x20sans\",sans-serif;\x20font-size:8pt}\n\tp\.
+SF:copy\x20{text-align:\x20center}\n\ttable\.grey1,tr\.grey1,td\.g")%r(HTT
+SF:POptions,7A,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nAllow:\x20
+SF:GET\r\nDate:\x20Sun,\x2008\x20Mar\x202020\x2015:20:00\x20GMT\r\nConnect
+SF:ion:\x20close\r\nContent-Length:\x200\r\n\r\n")%r(RTSPRequest,76,"HTTP/
+SF:1\.1\x20505\x20HTTP\x20Version\x20Not\x20Supported\r\nDate:\x20Sun,\x20
+SF:08\x20Mar\x202020\x2015:20:00\x20GMT\r\nConnection:\x20close\r\nContent
+SF:-Length:\x200\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9200-TCP:V=7.80%I=7%D=3/8%Time=5E650D19%P=x86_64-unknown-linux-gnu%
+SF:r(GetRequest,192,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x20applicatio
+SF:n/json;\x20charset=UTF-8\r\nContent-Length:\x20315\r\n\r\n{\r\n\x20\x20
+SF:\"status\"\x20:\x20200,\r\n\x20\x20\"name\"\x20:\x20\"Mother\x20Superio
+SF:r\",\r\n\x20\x20\"version\"\x20:\x20{\r\n\x20\x20\x20\x20\"number\"\x20
+SF::\x20\"1\.1\.1\",\r\n\x20\x20\x20\x20\"build_hash\"\x20:\x20\"f1585f096
+SF:d3f3985e73456debdc1a0745f512bbc\",\r\n\x20\x20\x20\x20\"build_timestamp
+SF:\"\x20:\x20\"2014-04-16T14:27:12Z\",\r\n\x20\x20\x20\x20\"build_snapsho
+SF:t\"\x20:\x20false,\r\n\x20\x20\x20\x20\"lucene_version\"\x20:\x20\"4\.7
+SF:\"\r\n\x20\x20},\r\n\x20\x20\"tagline\"\x20:\x20\"You\x20Know,\x20for\x
+SF:20Search\"\r\n}\n")%r(HTTPOptions,4F,"HTTP/1\.0\x20200\x20OK\r\nContent
+SF:-Type:\x20text/plain;\x20charset=UTF-8\r\nContent-Length:\x200\r\n\r\n"
+SF:)%r(RTSPRequest,4F,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/pla
+SF:in;\x20charset=UTF-8\r\nContent-Length:\x200\r\n\r\n")%r(FourOhFourRequ
+SF:est,A9,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/pla
+SF:in;\x20charset=UTF-8\r\nContent-Length:\x2080\r\n\r\nNo\x20handler\x20f
+SF:ound\x20for\x20uri\x20\[/nice%20ports%2C/Tri%6Eity\.txt%2ebak\]\x20and\
+SF:x20method\x20\[GET\]")%r(SIPOptions,4F,"HTTP/1\.1\x20200\x20OK\r\nConte
+SF:nt-Type:\x20text/plain;\x20charset=UTF-8\r\nContent-Length:\x200\r\n\r\
+SF:n");
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; Device: remote management; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 46m40s, deviation: 2h20m01s, median: 0s
+|_nbstat: NetBIOS name: VAGRANT-2008R2, NetBIOS user: <unknown>, NetBIOS MAC: 08:00:27:5e:15:ee (Oracle VirtualBox virtual NIC)
+| smb-os-discovery: 
+|   OS: Windows Server 2008 R2 Standard 7601 Service Pack 1 (Windows Server 2008 R2 Standard 6.1)
+|   OS CPE: cpe:/o:microsoft:windows_server_2008::sp1
+|   Computer name: vagrant-2008R2
+|   NetBIOS computer name: VAGRANT-2008R2\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2020-03-08T08:22:39-07:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2020-03-08T15:22:50
+|_  start_date: 2020-03-08T15:10:15
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Mar  8 20:56:40 2020 -- 1 IP address (1 host up) scanned in 486.63 seconds
